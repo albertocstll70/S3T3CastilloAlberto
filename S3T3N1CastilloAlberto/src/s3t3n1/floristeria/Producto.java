@@ -1,13 +1,15 @@
 package s3t3n1.floristeria;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
 import s3t3n1.obsever.ISubject;
 import s3t3n1.obsever.Observer;
 
-public abstract class Producto implements ISubject {
+public abstract class Producto implements ISubject, Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private double precio;
 	protected int stock = 0;
@@ -18,6 +20,7 @@ public abstract class Producto implements ISubject {
 		this.precio = precio;
 		this.stock = stock;
 		this.nombre = nombre;
+	
 	}
 
 	public double getPrecio() {
@@ -30,7 +33,7 @@ public abstract class Producto implements ISubject {
 
 	public void setStock(int stock) {
 		this.stock = stock;
-
+		
 	}
 
 	public int getStock() {
@@ -53,6 +56,7 @@ public abstract class Producto implements ISubject {
 	@Override
 	public void addStock(Integer stockAdd) {
 		setStock(this.stock + stockAdd);
+		
 
 	}
 
@@ -60,7 +64,7 @@ public abstract class Producto implements ISubject {
 
 	public void restarStock(Integer stockRes) {
 		setStock(this.stock - stockRes);
-
+		
 	}
 
 	@Override

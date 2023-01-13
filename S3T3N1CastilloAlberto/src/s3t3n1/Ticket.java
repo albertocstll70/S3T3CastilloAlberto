@@ -7,11 +7,11 @@ import java.util.Map;
 import s3t3n1.floristeria.Producto;
 
 public class Ticket implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private static int cont = 1;
 	private int id;
-
-	private Map<Producto, Integer> listProducto;
-	private Producto producto;
+	
+	public   Map<Producto, Integer> listProducto;
 	public static ArrayList<Ticket> listCompras = new ArrayList<Ticket>();
 
 	public int getId() {
@@ -27,9 +27,9 @@ public class Ticket implements Serializable {
 		this.id = cont;
 		if (cont >= 1) {
 			Ticket.cont = cont + 1;
-					}
-		
+					}		
 		addListaCompras();
+		
 	}
 
 	public double importeTotal() {
@@ -56,7 +56,22 @@ public class Ticket implements Serializable {
 	}
 
 	public void addListaCompras() {
+		
 		listCompras.add(this);
 	}
+
+	public  Map<Producto, Integer> getListProducto() {
+		return listProducto;
+	}
+
+	
+	
+	
+	
+
+	
+	
+	
+	
 
 }

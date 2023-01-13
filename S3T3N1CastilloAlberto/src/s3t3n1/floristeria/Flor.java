@@ -1,9 +1,12 @@
 package s3t3n1.floristeria;
 
+import java.io.Serializable;
+
 import s3t3n1.obsever.Observer;
 
-public class Flor extends Producto {
+public class Flor extends Producto implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String color;
 
 	public Flor(String nombre, String color, double precio, Integer stock) {

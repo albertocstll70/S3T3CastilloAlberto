@@ -1,10 +1,12 @@
 package s3t3n1.floristeria;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import s3t3n1.obsever.Observer;
 
-public class DecoracionPlastico extends Producto {
+public class DecoracionPlastico extends Producto implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Tipo tipo;
 	
 	
